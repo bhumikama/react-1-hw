@@ -41,8 +41,13 @@ const crewFields = [
 export default function OurCrew() {
   return (
     <>
+      <h3 className={styles.headerThree}>
+        Our crew is the heart and soul of Galactica. We are a diverse team of
+        seasoned space explorers, engineers, and visionaries who are united by a
+        common goal: to make space travel accessible and exciting for all.
+      </h3>
       <div className={styles.crewContainer}>
-        {crewFields.map((crew,index) => (
+        {crewFields.map((crew, index) => (
           <div className="card" key={index}>
             <div>
               <img
