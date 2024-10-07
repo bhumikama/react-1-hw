@@ -1,5 +1,6 @@
 import styles from "./page.module.css";
 import OurValues from "./OurValues";
+import OurCrew from "./OurCrew";
 
 // TASK - React 1 week 1
 // After you are finished with creating the page, move the OurValues, OurCrew, OurPartners components into their own files
@@ -8,14 +9,7 @@ import OurValues from "./OurValues";
 
 
 
-const OurCrew = () => {
-  // TASK - React 1 week 1
-  // Create the "Our Crew section"
-  // Use the descriptions provided in /app/about_us/README.md
-  // Use the pictures from /public/crew
-  // Some inspiration ideas found in /data/inspiration_about_us
-  return <p> ADD OUR CREW HERE </p>;
-};
+
 
 const OurPartners = () => {
   // TASK - React 1 week 1

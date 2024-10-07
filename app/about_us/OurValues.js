@@ -31,8 +31,8 @@ export default function OurValues() {
   return (
     <>
       <div className={styles.valueContainer}>
-        {valueFields.map((value) => (
-          <div className={styles.value}>
+        {valueFields.map((value,index) => (
+          <div className={styles.value} key={index}>
             <div>
               <h1 className={styles.valueTitle}>{value.heading}</h1>
             </div>
