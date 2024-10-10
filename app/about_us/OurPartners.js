@@ -33,16 +33,32 @@ const partners = [
     logoUrl: "./business_partners/sodexo-logo.png",
   },
 ];
+
+const LogoElement = ({ companyName, logoUrl }) => {
+  return (
+    <div className={styles.logoDiv}>
+      <img
+        src={logoUrl}
+        alt={`logo of ${companyName}`}
+        className={styles.logoImage}
+      />
+    </div>
+  );
+};
 export default function OurPartners() {
   return (
     <>
-      <h3 className={styles.heading}>We collaborate with some of the most respected names in the space and technology industries to make every journey extraordinary.</h3>
+      <h3 className={styles.heading}>
+        We collaborate with some of the most respected names in the space and
+        technology industries to make every journey extraordinary.
+      </h3>
       <div className={styles.logoContainer}>
-        {
-        partners.map((partner) => (
-          <div className={styles.logoDiv} key={partner.companyName}>
-            <img src={partner.logoUrl} alt={`logo of ${partner.companyName}`} className={styles.logoImage} />
-          </div>
+        {partners.map((partner) => (
+          <LogoElement
+            key={partner.companyName}
+            companyName={partner.companyName}
+            logoUrl={partner.logoUrl}
+          />
         ))}
       </div>
     </>

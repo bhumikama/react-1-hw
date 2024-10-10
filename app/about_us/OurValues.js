@@ -27,22 +27,33 @@ const valueFields = [
   },
 ];
 
+const ValueElement = ({ heading, subHeading, description }) => {
+  return (
+    <div className={styles.value}>
+      <div>
+        <h1 className={styles.valueTitle}>{heading}</h1>
+      </div>
+      <div>
+        <h2 className={styles.valueSub}>{subHeading}</h2>
+      </div>
+      <div>
+        <p className={styles.valueDescription}>{description}</p>
+      </div>
+    </div>
+  );
+};
+
 export default function OurValues() {
   return (
     <>
       <div className={styles.valueContainer}>
-        {valueFields.map((value,index) => (
-          <div className={styles.value} key={index}>
-            <div>
-              <h1 className={styles.valueTitle}>{value.heading}</h1>
-            </div>
-            <div>
-              <h2 className={styles.valueSub}>{value.subHeading}</h2>
-            </div>
-            <div>
-              <p className={styles.valueDescription}>{value.description}</p>
-            </div>
-          </div>
+        {valueFields.map((value, index) => (
+          <ValueElement
+            heading={value.heading}
+            subHeading={value.subHeading}
+            description={value.description}
+            key={index}
+          />
         ))}
       </div>
     </>

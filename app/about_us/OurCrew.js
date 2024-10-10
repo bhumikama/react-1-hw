@@ -38,6 +38,29 @@ const crewFields = [
   },
 ];
 
+const CrewMemberCard = ({ name, title, imageUrl, description }) => {
+  return (
+    <div className="card">
+      <div>
+        <img
+          src={imageUrl}
+          alt={`image of ${name}`}
+          className={styles.crewImage}
+        />
+      </div>
+      <div>
+        <h3 className={styles.crewName}>{name}</h3>
+      </div>
+      <div>
+        <h5 className={styles.crewTitle}>{title}</h5>
+      </div>
+      <div>
+        <p className={styles.crewDescription}>{description}</p>
+      </div>
+    </div>
+  );
+};
+
 export default function OurCrew() {
   return (
     <>
@@ -47,25 +70,14 @@ export default function OurCrew() {
         common goal: to make space travel accessible and exciting for all.
       </h3>
       <div className={styles.crewContainer}>
-        {crewFields.map((crew, index) => (
-          <div className="card" key={index}>
-            <div>
-              <img
-                src={crew.imageUrl}
-                alt={`image of ${crew.name}`}
-                className={styles.crewImage}
-              />
-            </div>
-            <div>
-              <h3 className={styles.crewName}>{crew.name}</h3>
-            </div>
-            <div>
-              <h5 className={styles.crewTitle}>{crew.title}</h5>
-            </div>
-            <div>
-              <p className={styles.crewDescription}>{crew.description}</p>
-            </div>
-          </div>
+        {crewFields.map((crew) => (
+          <CrewMemberCard
+            key={crew.name}
+            name={crew.name}
+            imageUrl={crew.imageUrl}
+            title={crew.title}
+            description={crew.description}
+          />
         ))}
       </div>
     </>

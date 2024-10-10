@@ -50,8 +50,8 @@
   word-spacing: normal;
 }
 
-@media (max-width: 768px){
-    .crewContainer{
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    }   
+@media (max-width: 768px) {
+  .crewContainer {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
 }
