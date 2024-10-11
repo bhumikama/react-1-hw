@@ -1,0 +1,57 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+.headerThree {
+  font-size: 15px;
+  font-weight: normal;
+  margin-top: 10px;
+  font-family: "Inter", sans-serif;
+}
+
+.crewContainer {
+  font-family: "Inter", sans-serif;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 10px;
+  margin: 20px 40px;
+}
+.crewImage {
+  width: 100%;
+  height: 250px;
+  background-color: white;
+  cursor: pointer;
+  object-fit: contain;
+  transition: transform 0.3s ease;
+}
+
+.crewImage:hover {
+  transform: scale(1.1);
+}
+.crewName {
+  margin-top: 20px;
+  font-size: 22px;
+  font-weight: 400;
+  padding-bottom: 5px;
+  letter-spacing: 0.5;
+  text-align: center;
+}
+.crewTitle {
+  font-size: 16px;
+  font-weight: 300;
+  text-align: center;
+  font-style: italic;
+}
+
+.crewDescription {
+  padding: 5px 0;
+  font-size: 15px;
+  font-weight: 100;
+  line-height: 1.2;
+  text-align: justify;
+  word-spacing: normal;
+}
+
+@media (max-width: 768px) {
+  .crewContainer {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
