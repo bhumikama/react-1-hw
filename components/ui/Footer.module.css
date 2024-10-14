@@ -54,3 +54,9 @@
 .pages li {
   padding-block: var(--spacing-04);
 }
+
+.mediaLinks{
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-20);
+}
