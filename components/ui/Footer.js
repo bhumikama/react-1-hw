@@ -2,6 +2,7 @@
 
 import { usePathname } from "next/navigation";
 import styles from "./Footer.module.css";
+import Link from "next/link";
 
 export const Footer = () => {
   const path = usePathname().split("?")[0];
@@ -18,14 +19,23 @@ export const Footer = () => {
       {/* TASK - React 1 week 2 */}
       {/* Create a new List for the Pages */}
       {/* We need to use the <Link /> component here */}
-      {/* <div className={styles.pages}>
+      <div className={styles.pages}>
         <h3>Pages</h3>
         <ul>
-          <li> <Link/> </li>
-          ...
+          <li>
+            {" "}
+            <Link href="/about_us">About Us</Link>
+          </li>
+          <li>
+            {" "}
+            <Link href="/destination">Destination</Link>
+          </li>
+          <li>
+            {" "}
+            <Link href="/nasa_collaboration">NASA Collaboration</Link>
+          </li>
         </ul>
-      </div> */}
-      {/* Docs for the Link: https://nextjs.org/docs/pages/api-reference/components/link */}
+      </div>
 
       <div className={styles.footerLinks}>
         <h3>Follow us</h3>
