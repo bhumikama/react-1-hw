@@ -1,8 +1,7 @@
 "use client";
 import classNames from "classnames";
 import { usePathname } from "next/navigation";
-import Link from "next/link";
-
+import { NavLink } from "./NavLink";
 import styles from "./Navbar.module.css";
 
 const navbarItems = [
@@ -20,20 +19,6 @@ const navbarItems = [
   },
 ];
 
-const NavItem = ({ title, link, isActive }) => {
-  return (
-    <li
-      className={classNames(styles.navbarLinks, {
-        [styles.isLinkActive]: isActive,
-      })}
-    >
-      <Link href={link}>
-        <b>01</b> {title}
-      </Link>
-    </li>
-  );
-};
-
 export const Navbar = () => {
   const currentPath = usePathname();
 
@@ -48,17 +33,15 @@ export const Navbar = () => {
       <nav className={styles.navbar}>
         <div className={styles.navbarBG} />
         <ul className={styles.navbarList}>
-          {navbarItems.map((navElement,index) => (
-            <NavItem
+          {navbarItems.map((navElement, index) => (
+            <NavLink
               key={index}
               title={navElement.title}
               link={navElement.link}
+              number={String(index + 1).padStart(2, "0")}
               isActive={navElement.link === currentPath}
             />
           ))}
-
-          {/* TASK - React 1 week 3 */}
-          {/* replace repeating content by using navbarItems.map(() => <NavLink />) */}
         </ul>
       </nav>
     </header>
