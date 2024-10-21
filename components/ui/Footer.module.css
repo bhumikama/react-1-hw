@@ -19,7 +19,9 @@
   padding: var(--spacing-08) 0;
 }
 
-.footer p, .footer a, .footer li {
+.footer p,
+.footer a,
+.footer li {
   color: #000;
   font-size: medium;
   font-weight: 200;
@@ -45,4 +47,16 @@
 
 .footerList li {
   padding-block: var(--spacing-04);
+}
+.pages ul {
+  list-style-type: none;
+}
+.pages li {
+  padding-block: var(--spacing-04);
+}
+
+.mediaLinks{
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-20);
 }
