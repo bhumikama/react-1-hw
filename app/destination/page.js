@@ -1,41 +1,9 @@
 "use client";
 
 import { useState } from "react";
-
+import { PlanetCard } from "@/components/destination/PlanetCard";
 import styles from "@/components/destination/destination.module.css";
 import { AddWishlistItem } from "@/components/destination/AddWishlistItem";
-
-const PlanetCard = ({
-  name,
-  description,
-  thumbnail,
-  isSelected,
-  index,
-  onAddOrRemovePlanet,
-}) => {
-  return (
-    <div className={styles.planetCard}>
-      <img
-        className={styles.planetThumbnail}
-        src={thumbnail}
-        alt={`image of ${name}`}
-      />
-      <div className={styles.planetDescription}>
-        <h2>
-          {name}
-          {isSelected ? "- SELECTED" : ""}
-        </h2>
-        <p>{description}</p>
-      </div>
-      <button
-        className="roundButton"
-        onClick={() => onAddOrRemovePlanet(name, index)}
-      >
-        {isSelected ? "REMOVE" : "ADD PLANET"}
-      </button>
-    </div>
-  );
-};
 
 export const Destinations = () => {
   const planetList = [
@@ -129,8 +97,7 @@ export const Destinations = () => {
               description={planet.description}
               thumbnail={planet.thumbnail}
               isSelected={planet.isSelected}
-              index={index}
-              onAddOrRemovePlanet={onAddOrRemovePlanet}
+              onButtonClick={(name) => onAddOrRemovePlanet(name,index)}
             />
           ))}
         </section>
