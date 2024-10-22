@@ -4,6 +4,7 @@ import { useState } from "react";
 import { PlanetCard } from "@/components/destination/PlanetCard";
 import styles from "@/components/destination/destination.module.css";
 import { AddWishlistItem } from "@/components/destination/AddWishlistItem";
+import PlanetWishlistItem from "@/components/destination/PlanetWishlistItem";
 
 export const Destinations = () => {
   const planetList = [
@@ -51,6 +52,15 @@ export const Destinations = () => {
       `You selected the following planet: ${name}, with the index of ${index}`
     );
   };
+  const removeFromWishlist = (name) => {
+    const newPlanetList = [...selectedPlanets];
+    const index = newPlanetList.findIndex((planet) => planet.name === name);
+    newPlanetList[index].isSelected = !newPlanetList[index].isSelected;
+    const filteredList = selectedPlanets.filter(
+      (planet) => planet.name != name
+    );
+    onAddPlanet(filteredList);
+  };
 
   return (
     <div className="fullBGpicture">
@@ -64,29 +74,17 @@ export const Destinations = () => {
             in your wishlist
           </p>
           <b>List coming soon after lesson 3!</b>
-
-          {/* STOP! - this is for week 3!*/}
-          {/* TASK - React 1 week 3 */}
-          {/* Import the AddWishlistItem react component */}
-          {/* <AddWishlistItem /> */}
-          {/* TASK - React 1 week 3 */}
-          {/* Convert the list, so it is using selectedPlanets.map() to display the items  */}
-          {/* Implement the "REMOVE" function */}
-          {/* uncomment the following code snippet: */}
-          {/* 
+          <AddWishlistItem />
           <h3>Your current wishlist</h3>
           <div className={styles.wishlistList}>
-            <PlanetWishlistItem 
-              name="europa"
-              onRemove={() => removeFromWishlist('europa')}
-              thumbnail="/destination/image-europa.png"
-            />
-            <PlanetWishlistItem 
-              name="europa"
-              onRemove={() => removeFromWishlist('europa')}
-              thumbnail="/destination/image-europa.png"
-            />
-          </div> */}
+            {selectedPlanets.map((planet) => (
+              <PlanetWishlistItem
+                name={planet.name}
+                onRemove={() => removeFromWishlist(planet.name)}
+                thumbnail={planet.thumbnail}
+              />
+            ))}
+          </div>
         </section>
         <section className="card">
           <h2>Possible destinations</h2>
@@ -97,7 +95,7 @@ export const Destinations = () => {
               description={planet.description}
               thumbnail={planet.thumbnail}
               isSelected={planet.isSelected}
-              onButtonClick={(name) => onAddOrRemovePlanet(name,index)}
+              onButtonClick={(name) => onAddOrRemovePlanet(name, index)}
             />
           ))}
         </section>
