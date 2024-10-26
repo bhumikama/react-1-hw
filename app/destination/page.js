@@ -53,7 +53,6 @@ export const Destinations = () => {
     const newPlanetList = [...selectedPlanets, newCustomPlanet];
     setSelectedPlanets(newPlanetList);
   };
-  console.log(selectedPlanets);
   return (
     <div className="fullBGpicture">
       <main className="mainContent">
