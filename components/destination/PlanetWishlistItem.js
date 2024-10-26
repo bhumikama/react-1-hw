@@ -1,3 +1,4 @@
+import styles from "./destination.module.css";
 export default function PlanetWishlistItem({ name, onRemove, thumbnail }) {
   return (
     <div className={styles.wishlistItem}>

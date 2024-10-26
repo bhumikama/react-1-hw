@@ -22,7 +22,7 @@ export const PlanetCard = ({
       </div>
       <button
         className="roundButton"
-        onClick={() => onButtonClick(name)}
+        onClick={() => onButtonClick()}
       >
         {isSelected ? "REMOVE" : "ADD PLANET"}
       </button>

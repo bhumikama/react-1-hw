@@ -4,9 +4,33 @@
   height: 100vh;
 }
 
-
 .nasaPicOfTheDayImg {
-  width: auto;
-  height: 400px;
+  height: 250px;
+  width: 250px;
+}
+.planetContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+}
 
+.astronomyContainer p {
+  font-size: 15px;
+  font-weight: 300;
+}
+.astronomyContainer h3 {
+  margin: 10px 0;
+}
+.astronomyPic {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+}
+.astronomyPic img {
+  max-height: 450px;
+  width: 100%;
+  border: 1px solid white;
+}
+.astronomyPic p {
+  text-justify: center;
 }
